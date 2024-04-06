@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect, flash
 from flask_sqlalchemy import SQLAlchemy
-import pyautogui as pg
+
 import time
 
 app = Flask(__name__)
@@ -103,4 +103,4 @@ def about():
 
 
 if __name__ == '__main__':
-  app.run(debug=True)
+  app.run(host='0.0.0.0', debug=True)

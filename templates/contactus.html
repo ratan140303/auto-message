@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<!-- Here can write all code for Home-->
+
+
+<div class="modal modal-sheet position-static d-block bg-body-secondary p-4 py-md-5 mt-5" tabindex="-3" role="dialog">
+    <div class="modal-dialog" role="document"> 
+        <div class="modal-content rounded-4 shadow">
+            <div class="modal-header p-4 pb-4 border-bottom-0">
+                <h1 class="fw-bold mb-0 fs-2 ms-4">Contact Us</h1>
+            </div>
+
+            <div class="modal-body p-5 pt-0">
+                <form class="" action="/contactus" method="POST">
+                    <div class="form-floating mb-3">
+                        <input type="text" name="name" class="form-control rounded-3" id="floatingText"
+                            placeholder="Enter Name">
+                        <label for="floatingInput">Name</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="email" name="email" class="form-control rounded-3" id="floatingInput"
+                            placeholder="name@example.com">
+                        <label for="floatingInput">Email Address</label>
+                    </div>
+                    <div class=" mb-3">
+                        <textarea type="text" name="message" class="form-control rounded-3" rows="5" placeholder="Message"></textarea>
+                    </div>
+                    <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Submit</button>
+                    <p class="text-body-secondary text-center">
+                        {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            {{ messages[0] }}
+                        {% endif %}
+                        {% endwith %}
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
